@@ -6,3 +6,13 @@
     -name: print URL
     ansible.builtin.debug:
       msg: URL= {{ URL }}
+- name: Demo on file variables
+  hosts: all
+  vars_files:
+    - sample-vars.yml
+  tasks:
+    - name: Print URL
+      ansible.builtin.debug:
+        msg: URL={{URL}}
+# variables can be accessed as spaces are not mandatory
+# {{VAR_NAME}} or {{ VAR_NAME }}
